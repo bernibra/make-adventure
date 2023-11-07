@@ -1,0 +1,13 @@
+
+report.html: report.qmd data/processed/correlation.rds code/utility.R
+	quarto render report.qmd --to html --output report.html
+
+data/processed/correlation.rds: code/analyses.R data/processed/data.rds code/utility.R
+	Rscript code/analyses.R
+
+data/processed/data.rds: code/process_data.R data/raw/Cage.csv data/raw/Drowning.csv code/utility.R
+	Rscript code/process_data.R
+
+clean:
+	rm ./data/processed/*.rds
+	rm ./report.html
