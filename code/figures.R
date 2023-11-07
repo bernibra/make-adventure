@@ -13,9 +13,9 @@ p <- data %>% ggplot(aes(x=year)) +
   geom_line( aes(y=deaths), size=1.5, color=dColor) +
   geom_line( aes(y=films*10 + 80), size=1.5, color=fColor) +
   scale_y_continuous(name = "Swimming pool drownings", limits = c(80, 140),
-                     sec.axis = dup_axis(name="Nicholas Cage films", breaks = c(80, 100, 120, 140), labels = c(0,2,4,6))
+                     sec.axis = dup_axis(name="Nicolas Cage films", breaks = c(80, 100, 120, 140), labels = c(0,2,4,6))
   ) +
-  ggtitle(label = "Drowned by falling into a pool vs Nicholas Cage movies", subtitle = paste0("Presents a correlation of: ", round(correlation, 2))) +
+  ggtitle(label = "Drowned by falling into a pool vs Nicolas Cage movies", subtitle = paste0("Presents a correlation of: ", round(correlation, 2))) +
   theme_bw() +
   theme(
     text = element_text(size = 12),
